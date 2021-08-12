@@ -36,7 +36,7 @@
         "selectedIconPath": "./images/icons/foot.png"
       }
 		]
-	},
+  },
 	"sitemapLocation": "sitemap.json",
   "permission": {
     "scope.userLocation": {
