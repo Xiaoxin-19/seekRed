@@ -1,0 +1,20 @@
+<!-- 图片轮播组件 -->
+<swiper 
+	class="swiper-heigh-auto"
+	indicator-dots="{{true}}"
+	indicator-active-color=" rgb(255, 0, 76)"
+	autoplay="{{true}}"
+	circular="{{true}}"
+	 >
+
+	 <swiper-item>
+		<van-image custom-class="item-heigh-auto" fit="fill" src="{{seekRed}}"/>
+	</swiper-item>
+	<swiper-item>
+		<van-image custom-class="item-heigh-auto" fit="fill" src="{{OneHundredBook}}"/>
+	</swiper-item>
+	<swiper-item>
+		<van-image custom-class="item-heigh-auto" fit="fill" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+	</swiper-item>
+
+</swiper>

@@ -1,0 +1,30 @@
+<!--pages/spot/spot.wxml-->
+<van-row >
+
+
+<!-- 地区列表 -->
+  <van-col span="7" >
+	<scroll-view style="height: {{windowHeight}}px" class="cityBackground">
+		<block wx:for="{{cities}}" wx:key="id">
+			<view  id="{{index}}"  class="{{item.cityStyle}}" bind:tap="clickCity" >{{item.name}}</view>
+		</block>
+	</scroll-view>
+  </van-col>
+
+
+<!-- 景点介绍栏 -->
+  <van-col span="17">
+	<scroll-view  style="height: {{windowHeight}}px">
+		<van-card
+		desc="描述信息"
+		title="景点名"
+		thumb="https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/images/%E4%B9%A6%EF%BC%88%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE%E6%A0%87%EF%BC%89.png?sign=77c97c4b526dffcff5b433cdbeead7f8&t=1628589618"
+		>
+		<view slot="bottom">地址</view>
+		</van-card>
+	</scroll-view>
+  </van-col>
+
+</van-row>
+
+

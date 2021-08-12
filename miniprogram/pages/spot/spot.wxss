@@ -1,0 +1,24 @@
+/* pages/spot/spot.wxss */
+
+.cityBackground{
+	background-color:white;
+}
+.test2{
+	background-color: rgb(223, 90, 108);
+}
+
+.cityList{
+	text-align: center;
+	background-color: white;
+	font-size: large;
+	line-height:45px;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+.cityList-selected{
+	border-left-color: crimson;
+	border-left-width: 8rpx;
+	border-left-style: solid;
+	background-color:rgb(231, 231, 231);
+}

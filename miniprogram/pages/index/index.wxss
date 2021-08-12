@@ -1,0 +1,9 @@
+
+.swiper-heigh-auto{
+	height: 380rpx;
+}
+
+.item-heigh-auto{
+	width: 750rpx;
+	height: 380rpx;
+}

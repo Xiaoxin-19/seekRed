@@ -1,0 +1,6 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+    <p>当前位置纬度: {{latitude}}</p>
+    <p>当前位置经度: {{longitude}}</p>
+    <p>获取位置的精度: {{accuracy}}</p>
+</view>
