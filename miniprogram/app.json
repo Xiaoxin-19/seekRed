@@ -2,6 +2,7 @@
 	"pages": [
     "pages/index/index",
     "pages/spot/spot",
+    "pages/article/article",
     "pages/mine/mine"
 	],
 	"window": {
