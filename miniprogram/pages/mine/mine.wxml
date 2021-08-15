@@ -1,6 +1,11 @@
 <!--pages/mine/mine.wxml-->
-<view class="container">
-    <p>当前位置纬度: {{latitude}}</p>
-    <p>当前位置经度: {{longitude}}</p>
-    <p>获取位置的精度: {{accuracy}}</p>
+<view>
+  <view class="userinfo">
+    <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName"/>
+    <view> <open-data type="userProvince" lang="zh_CN"/> • <open-data type="userCity" lang="zh_CN"/></view>
+   
+  </view>
 </view>
