@@ -22,7 +22,7 @@
 				title="{{item.name}}"
 				lazy-load="true"
 				thumb="{{item.preview}}"
-				thumb-link="../article/article?id={{item._id}}"
+				thumb-link="../article/article?id={{item._id}}&pageTitle={{item.name}}"
 			>
 				<view slot="desc">
 					<view><text class="font-weigh-bolder"> 票价：</text><text slot="price">{{item.price}}</text>	 </view>
