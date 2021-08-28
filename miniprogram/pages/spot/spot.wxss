@@ -23,15 +23,7 @@
 	background-color:rgb(231, 231, 231);
 }
 
-.font-weigh-bolder{
-	font-weight: bolder;
-}
-
-.text-overflow{
-	overflow: hidden;
-	text-overflow: ellipsis; 
-}
-
 .font-color-red{
 	color: red;
+	font-weight: bolder;
 }

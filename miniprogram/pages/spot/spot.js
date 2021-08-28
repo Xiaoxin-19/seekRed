@@ -21,6 +21,13 @@ Page({
 				});
 			}
 		});
+		// db.collection('clock_in').add({
+		// 	data:{
+		// 			_id: '2d44d6c261136266046bc72b69080b71'
+		// 		 }
+		// }).then(res=>{
+		// 	console.log(res);
+		// })
 		this.setData({
 			windowHeight:appInstance.windowHeight
 		});	
@@ -57,11 +64,9 @@ Page({
 				"cityName":cityName
 			},
 			success:function(res){
-				//console.log(res.result.data);
 				that.setData({
 					spotList:res.result.data
 				});
-				//console.log(that.data.spotList);
 			},
 			fail:err =>{
 				console.log(err);

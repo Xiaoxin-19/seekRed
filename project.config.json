@@ -2,11 +2,11 @@
     "miniprogramRoot": "miniprogram/",
     "cloudfunctionRoot": "cloudfunctions/",
     "setting": {
-        "urlCheck": true,
+        "urlCheck": false,
         "es6": true,
         "enhance": true,
         "postcss": true,
-        "preloadBackgroundData": false,
+        "preloadBackgroundData": true,
         "minified": true,
         "newFeature": true,
         "coverView": true,
@@ -36,14 +36,14 @@
             {
                 "packageJsonPath": "./package.json",
                 "miniprogramNpmDistDir": "./miniprogram/"
-              }
+            }
         ],
         "minifyWXSS": true,
         "showES6CompileOption": false
     },
     "appid": "wxab114c90f965a77c",
     "projectname": "LookingForRed",
-    "libVersion": "2.19.0",
+    "libVersion": "2.19.2",
     "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {
         "search": {

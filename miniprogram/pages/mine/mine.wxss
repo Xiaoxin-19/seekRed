@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgb(182, 177, 177);
+    color: rgb(10, 9, 9);
+    font-weight: bold;
     margin-top: 50rpx;
   }
   
@@ -14,4 +15,79 @@
     height: 128rpx;
     margin: 20rpx;
     border-radius: 50%;
+  }
+  .flex-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  
+
+  .shadow{
+    box-shadow: 5rpx 5rpx 5px #2c2c2c;
+  }
+
+  .noClock{
+    filter: grayscale(100%);
+  }
+
+
+  .flex-item {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 125px;
+    border-radius: 50%;
+  }
+
+  .name{
+    font-family: cursive;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    color:#081a2e ;
+  }
+
+  /* .grid-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    padding: 10px;
+    grid-column-gap:50rpx;
+    grid-row-gap: 20rpx;
+  }
+
+  
+
+  .shadow{
+    box-shadow: 5rpx 5rpx 5px #2c2c2c;
+  }
+
+  .noClock{
+    filter: grayscale(100%);
+  }
+
+
+  .flag-item {
+
+    overflow: hidden;
+    margin: 0 rpx;
+    border-radius: 50%;
+    
+  } */
+
+  /* .grid-item{
+
+  } */
+
+
+  page{
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-image: url("https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/images/red-flag.jpg?sign=4a4d801cb4b12707c94e63a80937abd4&t=1629610042");
   }

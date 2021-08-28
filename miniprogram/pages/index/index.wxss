@@ -3,7 +3,7 @@
 	height: 380rpx;
 }
 
-.item-heigh-auto{
+.item-heigh{
 	width: 750rpx;
 	height: 380rpx;
 }

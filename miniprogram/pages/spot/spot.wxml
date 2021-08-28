@@ -14,27 +14,21 @@
 
 <!-- 景点介绍栏 -->
   <van-col span="17">
-	<scroll-view  style="height: {{windowHeight}}px">
+	<scroll-view scroll-y="{{true}}" style="height: {{windowHeight}}px">
 		
 		<block wx:for="{{spotList}}" wx:key="_id">
 			<van-card
-				title-class="font-color-red"
-				title="{{item.name}}"
 				lazy-load="true"
 				thumb="{{item.preview}}"
+				thumb-mode = "aspectFill"
+				centered
 				thumb-link="../article/article?id={{item._id}}&pageTitle={{item.name}}"
 			>
 				<view slot="desc">
-					<view><text class="font-weigh-bolder"> 票价：</text><text slot="price">{{item.price}}</text>	 </view>
-					<view><text class="font-weigh-bolder"> 开放时间：</text>{{item.openingHours}}</view>
-				</view>
-				<view slot="bottom">
-					<text class="font-weigh-bolder"> 地址：</text>
-					<text class="text-overflow" user-select="true"> {{item.address}}</text>
+					<view><text class="font-color-red">{{item.name}}</text></view>	
 				</view>
 			</van-card>
 		</block>
-
 	</scroll-view>
   </van-col>
 
