@@ -1,1 +1,4 @@
+<view class="article">
 <mp-html content="{{htmlSnip}}" />
+</view>
+<p style="text-align: center; color:red;" wx:if="{{showBaseLine}}">🙄我可是有底线的哦🙄~ </p>

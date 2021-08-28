@@ -16,5 +16,73 @@
 	<swiper-item>
 		<van-image custom-class="item-heigh" fit="fill" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
 	</swiper-item>
-
 </swiper>
+
+<!-- 随机展示模块 -->
+
+<!-- <view class="flex-container">
+	<block wx:for="{{recommendlist}}" wx:key="_id">
+		<view class="flex-item" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="clickRecommend">
+			<image class="image" mode="widthFix" src="{{item.preview}}" />
+			<view class="name">
+				<p>{{item.name}}</p>
+			</view>
+		</view>	
+	</block>
+</view> -->
+
+
+
+	<view class="flex-container">
+
+		<view class="column">
+			<block wx:for="{{recommendlist}}" wx:key="_id">
+				<block wx:if="{{index % 2 == 0}}">
+					<view class="flex-item" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="clickRecommend">
+						<image class="image" mode="widthFix" src="{{item.preview}}" />
+						<view class="name">
+							<p>{{item.name}}</p>
+						</view>
+					</view>	
+				</block>
+			</block>
+		</view>
+
+
+		<view class="column">
+			<block wx:for="{{recommendlist}}" wx:key="_id">
+				<block wx:if="{{index % 2 != 0}}">
+					<view class="flex-item" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="clickRecommend">
+						<image class="image" mode="widthFix" src="{{item.preview}}" />
+						<view class="name">
+							<p>{{item.name}}</p>
+						</view>
+					</view>	
+				</block>
+			</block>
+		</view>
+
+	</view>
+
+	<text style="text-align: center;" wx:if="{{showBaseLine}}">🙄我可是有底线的哦🙄~ </text>
+
+<movable-area>
+	<movable-view 
+		direction="all"
+		inertia = "{{true}}"
+		x = "640rpx"
+		y = "800rpx"
+		animation = "{{true}}"
+	>
+	<!-- <van-button  
+		icon="{{returnTop_icon}}"  
+		bind:tap="returnTop"
+		custom-class="returnTop"
+		custom-style="background-color: seagreen;border-radius: 50%;"
+		/> -->
+		<image src="{{returnTop_icon}}" style="height:32px;width:32px;" mode="aspectFit"  bind:tap="returnTop" />
+	</movable-view>
+</movable-area>
+
+
+

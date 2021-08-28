@@ -53,39 +53,6 @@
     color:#081a2e ;
   }
 
-  /* .grid-container {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: auto auto auto ;
-    padding: 10px;
-    grid-column-gap:50rpx;
-    grid-row-gap: 20rpx;
-  }
-
-  
-
-  .shadow{
-    box-shadow: 5rpx 5rpx 5px #2c2c2c;
-  }
-
-  .noClock{
-    filter: grayscale(100%);
-  }
-
-
-  .flag-item {
-
-    overflow: hidden;
-    margin: 0 rpx;
-    border-radius: 50%;
-    
-  } */
-
-  /* .grid-item{
-
-  } */
-
-
   page{
     background-attachment: fixed;
     background-size: 100% 100%;

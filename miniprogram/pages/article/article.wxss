@@ -1,1 +1,6 @@
 /* pages/article/article.wxss */
+.article{
+    margin-top: 30rpx;
+    margin-left: 45rpx;
+    margin-right: 45rpx;
+}

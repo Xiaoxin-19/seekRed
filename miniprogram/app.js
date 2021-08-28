@@ -30,6 +30,7 @@ App({
 		this.getCurrentLocation();
 	},
 
+	// 获取当前位置坐标
 	 getCurrentLocation: function(){
 		var that = this;
 		wx.getLocation({
@@ -43,7 +44,7 @@ App({
 		});
 	},
 
-
+	// 获取当前城市
 	getCurrentCity: function(latitude,longitude){
 		var _this = this;
 		mapsdk.reverseGeocoder({
@@ -59,7 +60,8 @@ App({
 			}
 		});
 	},
-
+	
+	// 进行景点打卡校验
 	checkSpots:function(){
 		var test = wx.cloud.callFunction({
 			name:"check_spots",

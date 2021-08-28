@@ -1,9 +1,11 @@
 {
 	"pages": [
+
     "pages/index/index",
     "pages/spot/spot",
     "pages/article/article",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/test/test"
 	],
 	"window": {
 		"backgroundColor": "#999999",

@@ -25,7 +25,8 @@ exports.main = async (event, context) => {
 		const promise = db.collection(event.collection).
 			where(event.where).
 			skip(i*MAX_LIMIT).limit(MAX_LIMIT).
-			field(event.field).get();
+			field(event.field)
+			.get();
 		tasks.push(promise);
 	}
 

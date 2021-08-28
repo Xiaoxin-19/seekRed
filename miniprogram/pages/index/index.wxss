@@ -7,3 +7,78 @@
 	width: 750rpx;
 	height: 380rpx;
 }
+.flex-container{
+	margin: 40rpx;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-between;
+	align-content: center;
+}
+.flex-item{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 15px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 12px;
+	align-self:flex-start;
+	z-index: 99;
+}
+
+.image{
+	width: 100%;
+	border-top-left-radius:12px;
+	border-top-right-radius:12px;
+}
+
+.name{
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	font-family: cursive;
+	color: red;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 60px;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+}
+
+.column {
+	width: 327rpx;
+	justify-content:flex-end;
+	align-items: center;
+	padding: 0;
+  }
+  
+
+  movable-view {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+    border-radius: 50%;
+	background-color: snow;
+	overflow: hidden;
+	box-shadow: 5rpx 5rpx 5px #030303;
+	pointer-events:auto;
+  }
+  
+  movable-area {
+	background-color:rgba(255, 255, 255, 0);
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: 1;
+	pointer-events:none;
+  }
+
+  .emoji{font-family:'Segoe UI Emoji';}

@@ -56,21 +56,43 @@ Page({
 	 * 获取城市景点列表
 	 * @param {获取的目标景点的所在城市名称} cityName 
 	 */
-	getSpotList(cityName){
-		var that = this;
-		wx.cloud.callFunction({
+	getSpotList:async function(cityName){
+		// 显示加载图标
+		wx.showNavigationBarLoading({
+			success:function(){
+				console.log("loading~");
+			}
+		});
+		var temp = wx.cloud.callFunction({
 			name:"getSpotList",
 			data:{
 				"cityName":cityName
-			},
-			success:function(res){
-				that.setData({
-					spotList:res.result.data
-				});
-			},
-			fail:err =>{
-				console.log(err);
 			}
+		});
+
+		await temp.then(res =>{
+			this.setData({
+				spotList:res.result.data
+			});
+			// 延迟关闭加载图标
+			setTimeout(function(){
+				wx.hideNavigationBarLoading({
+					success:function(){
+						console.log("loading success ~");
+					}
+				});
+				wx.stopPullDownRefresh();
+			},1000);
 		})
+		.catch(()=>console.error);
+	},
+
+		// 下来刷新处理
+	onPullDownRefresh: function () {
+		var targetCityName = this.data.cities[this.data.currentCityIndex].name;
+		//console.log(targetCityName);
+		this.getSpotList(targetCityName);
 	}
   });
+
+  
