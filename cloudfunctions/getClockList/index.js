@@ -12,6 +12,7 @@ exports.main = async (event, context) => {
 
 	// 获取打卡表的全部数据
 	var myClockList = await getMyClockList();
+	//console.log(myClockList);
 
 	// 获取景点表的全部数据
 	var spots = await getAllSpots();
@@ -33,7 +34,8 @@ exports.main = async (event, context) => {
 	})
 	.field({
 		_id:true,
-		_openid:true
+		_openid:true,
+		spotId:true
 	})
 	.get();
 	return myClockList.data;
@@ -78,7 +80,7 @@ exports.main = async (event, context) => {
  */
  function getBadgeList(newClockList,spots){
 	newClockList.forEach((item,index,array) => {
-		var spots_index = spots.findIndex((element,indexx,arrayy) => element._id === item._id);
+		var spots_index = spots.findIndex((element,indexx,arrayy) => element._id === item.spotId);
 		if(spots_index !== -1) spots[spots_index].isActivated = "";
 	});
 	return spots;

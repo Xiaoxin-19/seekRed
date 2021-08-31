@@ -56,5 +56,5 @@
   page{
     background-attachment: fixed;
     background-size: 100% 100%;
-    background-image: url("https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/images/red-flag.jpg?sign=4a4d801cb4b12707c94e63a80937abd4&t=1629610042");
+    background-image: url("https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/images/red-flag.jpg?sign=af2953d5c337370076e36d8fa1bc0684&t=1630211405");
   }

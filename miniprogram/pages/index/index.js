@@ -3,10 +3,11 @@ var appInstance = getApp();
 Page({
 	data: {
 		seekRed:"https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/swiper_image/seekRed.jpg?sign=c1cd44e25acea935014640fc96bb4d4a&t=1628431927",
-		OneHundredBook:"https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/swiper_image/100Book.jpg?sign=953a482626cdb36eccca66622b74fe5c&t=1628432070",
+		longYan:"https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/lunbotu/%E5%8F%A4%E7%94%B0%E6%97%85%E6%B8%B8%E5%8C%BA1.jpg?sign=4dbfa105194637e68788a6a72403536c&t=1630210563",
 		recommendlist:[],
 		returnTop_icon:"https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/images/returnTop.png?sign=e5c91bc7d2b6a1c0d63fbdb5de87bccd&t=1630157469",
-		showBaseLine:false
+		showBaseLine:false,
+		guWenChang:"https://636c-cloud1-7g5l3bod16c561b2-1306791508.tcb.qcloud.la/lunbotu/%E8%B0%B7%E6%96%87%E6%98%8C%E7%BA%AA%E5%BF%B5%E9%A6%861.png?sign=beca215b4fd4902dd3f3296fe9c80b6f&t=1630210625"
 	},
 
 	/**

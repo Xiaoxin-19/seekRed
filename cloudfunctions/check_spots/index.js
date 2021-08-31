@@ -17,20 +17,22 @@ exports.main = async (event, context) => {
 	// 获取打卡表的全部数据
 	var myClockList = await getMyClockList();
 
-	// 比对打卡表数据，筛选出对不存在已打卡列表中的应打卡项目
-
+	// 比对打卡表数据，筛选出 不存在已打卡列表中的应打卡项目
 	var noClockList = [];
 	if(clockSpots.length !== 0)  noClockList = getNoClockList(clockSpots,myClockList);
 
-
+	// 没有需要打卡的地点返回1
 	var result = 1;
 	if(noClockList.length !== 0){
-		// 比对打卡表数据，如果对不存在的项目进行set操作
+		// 对不存在的项目进行set操作
 		myClockList = await setClockIn(noClockList,myClockList);
-		if(myClockList === 0) return 0;
+		// 数据库写入出错返回3
+		if(myClockList === 0) return 3;
+		// 获取景点名称出错返回4
 		result = await getNoClockSpotsName(noClockList);
-		if(result === 0) return 0;
+		if(result === 0) return 4;
 	}
+
 	return result;
 }
 
@@ -69,7 +71,8 @@ async function getMyClockList(){
 	})
 	.field({
 		_id:true,
-		_openid:true
+		_openid:true,
+		spotId:true
 	})
 	.get();
 	return myClockList.data;
@@ -84,20 +87,29 @@ async function getMyClockList(){
 async function setClockIn(noClockList,myClockList){
 	const wxContext =  cloud.getWXContext();
 	// 没有打过卡的项目添加个人唯一标识
-	noClockList.forEach((item,index,array)=>item._openid = wxContext.OPENID);
+	noClockList.forEach((item,index,array)=>{
+		var spotId = item._id;
+		noClockList[index] = {
+			_openid:wxContext.OPENID,
+			spotId:spotId
+		};
+		//console.log(item);
+	});
+
 	// 将没打过卡的项目：打卡 + 加入到显示列表中
 	if(noClockList.length !== 0){
 		var temp =  db.collection('clock_in').add({
 			data:noClockList
 		});
 		await temp.then(res => {
-			console.log(res);
+			//console.log(res);
 			noClockList.forEach((item,index,array)=>{
 				myClockList.push(item);
 			});
 		})
-		.catch(function(){
-			myClockList = 0;
+		.catch(function(err){
+			myClockList =0;
+			//console.log(err);
 		});
 	}
 	return myClockList;
@@ -110,8 +122,10 @@ async function setClockIn(noClockList,myClockList){
  * @returns 
  */
 function getNoClockList(clockSpots,myClockList){
+	// console.log(clockSpots);
+	// console.log(myClockList);
 	var noClockList = clockSpots.filter((item,index,array) => {
-		var temp = myClockList.findIndex((element,indexx,arrayy) =>  element._id === item._id)
+		var temp = myClockList.findIndex((element,indexx,arrayy) =>  element.spotId === item._id)
 		return 	temp === -1;
 	});
 	return noClockList;
@@ -126,8 +140,9 @@ function getNoClockList(clockSpots,myClockList){
 	 //获取查询条件
 	 var query_condition = [];
 	 noClockList.forEach((item,index,array)=>{
-		 query_condition.push(item._id);
+		 query_condition.push(item.spotId);
 	 });
+	 //console.log(query_condition);
 
 	//  进行查询
 	currentCitySpots =  cloud.callFunction({
@@ -151,7 +166,7 @@ function getNoClockList(clockSpots,myClockList){
 	})
 	.catch(function(err){
 		result = 0;
-		console.log(err);
+		//console.log(err);
 	});
 	return result.data;
 }

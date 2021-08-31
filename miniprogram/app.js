@@ -63,6 +63,9 @@ App({
 	
 	// 进行景点打卡校验
 	checkSpots:function(){
+		console.log(this.currentCity);
+		console.log(this.longitude);
+		console.log(this.latitude);
 		var test = wx.cloud.callFunction({
 			name:"check_spots",
 			data:{
@@ -73,8 +76,8 @@ App({
 				}
 				// currentCity:"漳州市",
 				// coordinate:{
-				// 	longitude:118.05004,
-				// 	latitude:24.366803
+				// 	longitude:118.04832546657985,
+				// 	latitude:24.359921061197916
 				// }
 			 }
 		});
@@ -82,7 +85,8 @@ App({
 			var result = res.result;
 			// console.log(res);
 			if(result == 1) console.log('check_sopts Success!');
-			else if(result === 0) console.log('check_sopts failed!');
+			else if(result === 3) console.log('写入数据库发生错误');
+			else if(result === 4) console.log("获取景点名称发生错误");
 			else {
 				console.log(result);
 				var spotName = '';
